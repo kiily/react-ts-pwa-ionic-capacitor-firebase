@@ -1,5 +1,5 @@
 {
-  "name": "react-ts-pwa-capacitor-ionic",
+  "name": "react-ts-pwa-capacitor-ionic-firebase",
   "integrations": {
     "capacitor": {}
   },

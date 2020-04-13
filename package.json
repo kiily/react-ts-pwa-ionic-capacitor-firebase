@@ -1,6 +1,6 @@
 {
-  "name": "react-ts-pwa-capacitor-ionic",
-  "description": "A template for a react PWA built with CRA, Ionic and Capacitor, with a complete and custom CI/CD workflow around it (w/ yarn)",
+  "name": "react-ts-pwa-capacitor-ionic-firebase",
+  "description": "A template for a react PWA built with CRA, Ionic, Capacitor and basic Firebase Authentication with a complete and custom CI/CD workflow around it (w/ yarn)",
   "version": "1.0.0",
   "private": true,
   "repository": {

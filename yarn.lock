@@ -15295,9 +15295,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-ts-pwa-capacitor-ionic@workspace:.":
+"react-ts-pwa-capacitor-ionic-firebase@workspace:.":
   version: 0.0.0-use.local
-  resolution: "react-ts-pwa-capacitor-ionic@workspace:."
+  resolution: "react-ts-pwa-capacitor-ionic-firebase@workspace:."
   dependencies:
     "@capacitor/android": 2.0.1
     "@capacitor/cli": 2.0.1

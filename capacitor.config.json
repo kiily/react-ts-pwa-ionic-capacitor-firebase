@@ -1,6 +1,6 @@
 {
   "appId": "com.example.app",
-  "appName": "react-ts-pwa-capacitor-ionic",
+  "appName": "react-ts-pwa-capacitor-ionic-firebase",
   "bundledWebRuntime": false,
   "npmClient": "yarn",
   "webDir": "build",
