@@ -41,6 +41,23 @@ By default, only `ios` and `android` platforms come added by default. You can ad
 
 `npx cap add electron`
 
+## Adding Firebase
+
+Firebase related code is under `src/context/Firebase`. To make the app work, make sure you replace the placeholders for the app's metadata.
+
+```
+const config  = {
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  databaseURL: 'YOUR_DATABASE_URL',
+  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  projectId: 'YOUR PROJECT_ID',
+  storageBucket: 'YOUR_STORAGE_BUCKET',
+};
+```
+
+Check out the [Firebase Getting Started Guide](https://firebase.google.com/docs/web/setup) for the official docs.
+
 ## Available Scripts
 
 In the project directory, you can run:

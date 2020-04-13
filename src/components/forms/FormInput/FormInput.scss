@@ -1,0 +1,5 @@
+@import '../../../styles/variables';
+
+.FormInput {
+  @include input-container(white);
+}

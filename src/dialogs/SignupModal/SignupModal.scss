@@ -1,0 +1,15 @@
+ion-content.SignupModal {
+  --padding-top: 15px;
+  --padding-end: 5%;
+  --padding-start: 5%;
+  --background: #36b5b0;
+  .SignupModal__button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    ion-button {
+      width: 50%;
+    }
+  }
+}

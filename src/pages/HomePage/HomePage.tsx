@@ -8,12 +8,12 @@ import {
   IonToolbar,
   IonTitle,
 } from '@ionic/react';
-const Home = () => {
+const HomePage = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>My Page</IonTitle>
+          <IonTitle>Home Page</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -32,4 +32,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

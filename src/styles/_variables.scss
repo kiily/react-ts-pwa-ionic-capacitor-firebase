@@ -1,0 +1,31 @@
+// COLOR PALETTE
+$primary: #69d2e7;
+$secondary: #a7dbdb;
+$tertiary: #e0e4cc;
+$orange-light: #f38630;
+$orange-light-40: rgba(243, 134, 48, 0.4);
+$orange: #fa6900;
+$grey-light: #fafafa;
+$danger: #ff625f;
+
+// OVERRIDES
+:root {
+  --ion-color-primary: #{$primary};
+  --ion-color-secondary: white;
+  --ion-color-danger: #{$danger};
+}
+
+// BORDERS
+$border-radius: 8px;
+
+// FONTS
+$font-xl: 40px;
+$font-l: 32px;
+$font-m: 20px;
+$font-s: 16px;
+$font-xs: 12px;
+
+// SHADOWS
+$box-shadow: 0 5px 15px 3px rgba(40, 47, 54, 0.07);
+
+@import './mixins';
