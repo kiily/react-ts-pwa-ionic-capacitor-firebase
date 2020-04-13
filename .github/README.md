@@ -6,7 +6,7 @@
 
 Template CRA PWA, with TS, SCSS and customized CI/CD environment.
 
-You can find all the relevant details about what is included in this repo here: [Template Details](https://www.notion.so/kiilysden/React-TS-PWA-Ionic-Capacitor-edd29a16ae0c45c98590077f07e3b051)
+You can find all the relevant details about what is included in this repo here: [Template Details](https://www.notion.so/kiilysden/React-TS-PWA-Ionic-Capacitor-Firebase-778cc70e1cdf4b36b8d5a677e603fd78)
 
 # Getting started:
 

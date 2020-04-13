@@ -7,13 +7,28 @@ import {
   IonButton,
   IonToolbar,
   IonTitle,
+  IonIcon,
+  IonButtons,
 } from '@ionic/react';
-const HomePage = () => {
+import { logOut } from 'ionicons/icons';
+import { doSignOut } from '../../context';
+import { RouteComponentProps } from 'react-router-dom';
+
+const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
+  const logout = () => {
+    doSignOut();
+    history.push('/');
+  };
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Home Page</IonTitle>
+          <IonButtons slot="end">
+            <IonButton onClick={logout}>
+              <IonIcon icon={logOut} />
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent>

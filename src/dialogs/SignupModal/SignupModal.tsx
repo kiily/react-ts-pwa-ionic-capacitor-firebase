@@ -57,7 +57,7 @@ const SignupModal: React.FC<IModal> = ({ isOpen, closed, modalTitle }) => {
               <IonIcon icon={arrowBack} />
             </IonButton>
           </IonButtons>
-          <IonTitle>My Page</IonTitle>
+          <IonTitle>{modalTitle}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="SignupModal">

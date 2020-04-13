@@ -1,18 +1,22 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/HomePage/HomePage';
+import { Route, Redirect, BrowserRouter, Switch } from 'react-router-dom';
+import { IonApp } from '@ionic/react';
+import HomePage from './pages/HomePage/HomePage';
+import ProtectedRouteHoc from './hoc/ProtectedRouteHoc';
+import LoginPage from './pages/LoginPage/LoginPage';
 import './App.scss';
 
 const App = () => {
+  // TODO: does not seem to work with IonicReactRouter just yet
   return (
     <IonApp>
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route path="/" exact component={Home} />
-        </IonRouterOutlet>
-      </IonReactRouter>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={LoginPage} />
+          <ProtectedRouteHoc path="/home" component={HomePage} exact={true} />
+          <Route path="*" render={() => <Redirect to="/" />} />
+        </Switch>
+      </BrowserRouter>
     </IonApp>
   );
 };
