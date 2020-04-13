@@ -1,9 +1,20 @@
 import React from 'react';
+import { TextFieldTypes } from '@ionic/core';
+
 import './FormInput.scss';
 import { IonCol, IonRow, IonInput } from '@ionic/react';
-import { IFormInput } from '../../interfaces';
 
-const FormInput: React.FC<IFormInput> = ({
+interface FormInput {
+  name: string;
+  color: string;
+  value: string;
+  onChange: (event: any) => void;
+  clearInput: boolean;
+  type: TextFieldTypes;
+  placeholder: string;
+}
+
+const FormInput: React.FC<FormInput> = ({
   name,
   color,
   value,
