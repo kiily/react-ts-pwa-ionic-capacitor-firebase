@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, IModal } from '../../interfaces';
+import { IUser, IModal } from '../../interfaces';
 import {
   IonModal,
   IonContent,
@@ -37,7 +37,7 @@ const SignupModal: React.FC<IModal> = ({ isOpen, closed, modalTitle }) => {
 
   const onSignupSubmit = () => {
     const { email, firstName, lastName, password } = userState;
-    const user: User = {
+    const user: IUser = {
       email,
       firstName,
       lastName,

@@ -1,6 +1,14 @@
 import { createContext } from 'react';
+import { auth } from './db';
 
-export const AuthContext = createContext({
-  loggedUser: null,
-  setLoggedUser: null,
+type UserCredential = firebase.auth.UserCredential;
+
+interface IAuthContext {
+  loggedUser: UserCredential;
+  setLoggedUser: (user: UserCredential) => void;
+}
+
+export const AuthContext = createContext<IAuthContext>({
+  loggedUser: { user: null, credential: null },
+  setLoggedUser: (user: UserCredential) => user,
 });

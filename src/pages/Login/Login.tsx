@@ -1,22 +1,22 @@
 import React, { useContext, useEffect, useState, useReducer } from 'react';
 import { IonPage, IonRow, IonButton } from '@ionic/react';
-import { withRouter } from 'react-router-dom';
-import { withFirebase, FirebaseWithRouter } from '../../context/Firebase';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import FormInput from '../../components/forms/FormInput/FormInput';
 import SignupModal from '../../dialogs/SignupModal/SignupModal';
-import { User } from '../../interfaces';
+import { IUser } from '../../interfaces';
 import { ResetPasswordAlert, ErrorAlert } from '../../dialogs/Alert';
 import { handleAuthErrors, readSession } from '../../utils';
 import { authAlertReducer, AUTH_ACTIONS } from '../../data';
 import { AUTH_ALERT_INITIAL_STATE } from '../../data/auth-alert/auth-alert.state';
 import './LoginPage.scss';
+import { doLoginWithEmailAndPassword, doPasswordReset, doSignUp } from '../../context';
 
 interface AuthState {
   email: string;
   password: string;
 }
-const LoginPage: React.FC<FirebaseWithRouter> = ({ history, firebase }) => {
+const LoginPage: React.FC<RouteComponentProps> = ({ history }) => {
   const { setLoggedUser } = useContext(AuthContext);
   const [authState, setAuthState] = useState<AuthState>({ email: '', password: '' });
   const [authAlertState, dispatch] = useReducer(authAlertReducer, AUTH_ALERT_INITIAL_STATE);
@@ -34,7 +34,7 @@ const LoginPage: React.FC<FirebaseWithRouter> = ({ history, firebase }) => {
     });
   };
 
-  const handleError = (error) => {
+  const handleError = (error: Error) => {
     const loginAlertMessage = handleAuthErrors(error);
     dispatch({
       type: AUTH_ACTIONS.toggleCredentialsAlert,
@@ -45,9 +45,9 @@ const LoginPage: React.FC<FirebaseWithRouter> = ({ history, firebase }) => {
   const onLogin = async () => {
     let user = null;
     try {
-      user = await firebase
-        .doLoginUserWithEmailAndPassword(authState.email, authState.password)
-        .catch((error) => handleError(error));
+      user = await doLoginWithEmailAndPassword(authState.email, authState.password).catch((error) =>
+        handleError(error)
+      );
     } catch (error) {
       handleError(error);
     }
@@ -61,14 +61,14 @@ const LoginPage: React.FC<FirebaseWithRouter> = ({ history, firebase }) => {
     dispatch({ type: AUTH_ACTIONS.toggleResetPassword, payload: { isOpen: false } });
     if (event.detail?.role !== 'cancel') {
       const email = event.detail.data.values.email;
-      firebase.doPasswordReset(email);
+      doPasswordReset(email);
     }
   };
 
-  const signupClosed = (user: User) => {
+  const signupClosed = (user: IUser) => {
     dispatch({ type: AUTH_ACTIONS.toggleSignUp, payload: { isOpen: false } });
     if (user) {
-      firebase.doSignUp(user).then(() => {
+      doSignUp(user).then(() => {
         history.push('/home');
       });
     }

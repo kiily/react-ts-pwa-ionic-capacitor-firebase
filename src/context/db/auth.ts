@@ -1,5 +1,5 @@
 import { auth, SESSION_PERSISTENCE, db } from './firebase';
-import { User } from '../../interfaces';
+import { IUser } from '../../interfaces';
 
 /**
  * Logs the user in and saves it in Session storage.
@@ -13,7 +13,7 @@ export const doLoginWithEmailAndPassword = (email: string, password: string) => 
 /**
  * Signs up the user the user and register the user object in the database for convenience
  */
-export const doSignUp = (user: User) =>
+export const doSignUp = (user: IUser) =>
   auth.createUserWithEmailAndPassword(user.email, user.password).then(() => {
     return doLoginWithEmailAndPassword(user.email, user.password).then(() => {
       return db.collection('users').add({

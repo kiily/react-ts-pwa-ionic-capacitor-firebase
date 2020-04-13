@@ -1,2 +1,2 @@
 export * from './AuthContext';
-export * from './Firebase';
+export * from './db';

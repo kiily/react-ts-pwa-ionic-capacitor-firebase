@@ -1,6 +1,6 @@
 import { FirebaseAuthErrors } from '../context/Firebase';
 
-export function handleAuthErrors(error: any) {
+export function handleAuthErrors(error: Error) {
   let loginAlertMessage = error.toString();
   if (loginAlertMessage.includes(FirebaseAuthErrors.BadlyFormatted)) {
     loginAlertMessage = 'Your email address is badly formatted';
