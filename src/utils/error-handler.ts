@@ -1,4 +1,4 @@
-import { FirebaseAuthErrors } from '../context/Firebase';
+import { FirebaseAuthErrors } from '../context';
 
 export function handleAuthErrors(error: Error) {
   let loginAlertMessage = error.toString();
