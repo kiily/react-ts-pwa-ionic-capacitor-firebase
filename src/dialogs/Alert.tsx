@@ -1,6 +1,7 @@
-import React from 'react';
-import { IAlert } from '../interfaces/alert.interface';
 import { IonAlert } from '@ionic/react';
+import React from 'react';
+
+import { IAlert } from '../interfaces/alert.interface';
 
 const Alert: React.FC<IAlert> = ({ isOpen, onDismiss, header, message, inputs, buttons }) => {
   return (

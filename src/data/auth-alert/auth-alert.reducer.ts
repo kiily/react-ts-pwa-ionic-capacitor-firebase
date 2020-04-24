@@ -1,7 +1,8 @@
+import { Reducer } from 'react';
+
+import { ActionType } from '../action.interface';
 import { AUTH_ACTIONS } from './auth-alert.actions';
 import { AuthAlertState } from './auth-alert.state';
-import { ActionType } from '../action.interface';
-import { Reducer } from 'react';
 
 export const authAlertReducer: Reducer<AuthAlertState, ActionType<AUTH_ACTIONS>> = (
   currentState: AuthAlertState,

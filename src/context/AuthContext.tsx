@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+
 import { auth } from './db';
 
 type UserCredential = firebase.auth.UserCredential;

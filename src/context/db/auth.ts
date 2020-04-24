@@ -1,5 +1,5 @@
-import { auth, SESSION_PERSISTENCE, db } from './firebase';
 import { IUser } from '../../interfaces';
+import { auth, db, SESSION_PERSISTENCE } from './firebase';
 
 /**
  * Logs the user in and saves it in Session storage.

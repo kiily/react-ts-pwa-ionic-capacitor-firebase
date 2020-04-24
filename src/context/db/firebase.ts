@@ -1,7 +1,8 @@
-import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
+
+import * as firebase from 'firebase/app';
 
 export const config = {
   apiKey: 'YOUR_API_KEY',

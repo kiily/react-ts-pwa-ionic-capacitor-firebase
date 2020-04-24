@@ -1,16 +1,18 @@
-import React, { useContext, useEffect, useState, useReducer } from 'react';
-import { IonPage, IonRow, IonButton } from '@ionic/react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
+import './LoginPage.scss';
+
+import { IonButton, IonPage, IonRow } from '@ionic/react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
+
 import FormInput from '../../components/forms/FormInput/FormInput';
+import { doLoginWithEmailAndPassword, doPasswordReset, doSignUp } from '../../context';
+import { AuthContext } from '../../context/AuthContext';
+import { AUTH_ACTIONS, authAlertReducer } from '../../data';
+import { AUTH_ALERT_INITIAL_STATE } from '../../data/auth-alert/auth-alert.state';
+import { ErrorAlert, ResetPasswordAlert } from '../../dialogs/Alert';
 import SignupModal from '../../dialogs/SignupModal/SignupModal';
 import { IUser } from '../../interfaces';
-import { ResetPasswordAlert, ErrorAlert } from '../../dialogs/Alert';
 import { handleAuthErrors, readSession } from '../../utils';
-import { authAlertReducer, AUTH_ACTIONS } from '../../data';
-import { AUTH_ALERT_INITIAL_STATE } from '../../data/auth-alert/auth-alert.state';
-import './LoginPage.scss';
-import { doLoginWithEmailAndPassword, doPasswordReset, doSignUp } from '../../context';
 
 interface AuthState {
   email: string;

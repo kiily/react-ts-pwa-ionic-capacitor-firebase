@@ -1,10 +1,12 @@
-import React from 'react';
-import { Route, Redirect, BrowserRouter, Switch } from 'react-router-dom';
-import { IonApp } from '@ionic/react';
-import HomePage from './pages/HomePage/HomePage';
-import ProtectedRouteHoc from './hoc/ProtectedRouteHoc';
-import LoginPage from './pages/LoginPage/LoginPage';
 import './App.scss';
+
+import { IonApp } from '@ionic/react';
+import React from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+
+import ProtectedRouteHoc from './hoc/ProtectedRouteHoc';
+import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 const App = () => {
   // TODO: does not seem to work with IonicReactRouter just yet

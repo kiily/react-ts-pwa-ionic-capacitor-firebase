@@ -1,18 +1,19 @@
-import React from 'react';
 import {
-  IonPage,
-  IonHeader,
+  IonButton,
+  IonButtons,
   IonContent,
   IonDatetime,
-  IonButton,
-  IonToolbar,
-  IonTitle,
+  IonHeader,
   IonIcon,
-  IonButtons,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from '@ionic/react';
 import { logOut } from 'ionicons/icons';
-import { doSignOut } from '../../context';
+import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+
+import { doSignOut } from '../../context';
 
 const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
   const logout = () => {

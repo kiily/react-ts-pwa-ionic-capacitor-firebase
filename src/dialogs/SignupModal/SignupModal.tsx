@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import { IUser, IModal } from '../../interfaces';
-import {
-  IonModal,
-  IonContent,
-  IonRow,
-  IonButton,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButtons,
-  IonIcon,
-} from '@ionic/react';
-import FormInput from '../../components/forms/FormInput/FormInput';
-import { SignupSuccessAlert } from '../Alert';
-import { arrowBack } from 'ionicons/icons';
-
 import './SignupModal.scss';
+
+import {
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonModal,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/react';
+import { arrowBack } from 'ionicons/icons';
+import React, { useState } from 'react';
+
+import FormInput from '../../components/forms/FormInput/FormInput';
+import { IModal, IUser } from '../../interfaces';
+import { SignupSuccessAlert } from '../Alert';
 
 const SignupModal: React.FC<IModal> = ({ isOpen, closed, modalTitle }) => {
   const initialState = {

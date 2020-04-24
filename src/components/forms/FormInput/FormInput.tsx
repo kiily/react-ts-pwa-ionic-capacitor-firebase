@@ -1,8 +1,8 @@
-import React from 'react';
-import { TextFieldTypes } from '@ionic/core';
-
 import './FormInput.scss';
-import { IonCol, IonRow, IonInput } from '@ionic/react';
+
+import { TextFieldTypes } from '@ionic/core';
+import { IonCol, IonInput, IonRow } from '@ionic/react';
+import React from 'react';
 
 interface FormInput {
   name: string;

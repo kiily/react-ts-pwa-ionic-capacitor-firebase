@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { Route, Redirect, RouteComponentProps } from 'react-router-dom';
+import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
+
 import { AuthContext } from '../context/AuthContext';
 
 interface ProtectedRouter {
